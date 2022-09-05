@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>SimpleNumbers</title>
+</head>
+
+<body>
+	<script>
+		/* 
+			// Таск на піднесення до степеня
+			// 1. Порахувати додатню степінь.
+			// 2. Порахувати нульову степінь.
+			// 3. Порахувати від'ємну степінь.
+			let num = +prompt('write number');
+			let step = +prompt('write degree');
+			let pow = (a,b) => {
+				let result = 1;
+				let checker = false;
+				if(b!=0){
+					if(b<0){
+						b = -b;
+						checker = true;
+					}
+					for(let i=1; i<=b; i++){
+						result *= a;
+					}
+					if(checker) result = 1/result;
+				}
+				return console.log(result);
+			}
+			pow(num, step) 
+		*/
+
+		/* 
+			// Таск на провірку віку
+        	// 1. якшо більше 18 тоді ("Доступ дозволено!").
+        	// 2. якшо менше 18 тоді ("Батьки довзолили?").
+        	// 3. Так - ("Доступ дозволено!").
+        	// 4. Ні - ("У доступі відмовлено!").
+			function chekAge(age) {
+				if (age >= 18) {
+					return true;
+				}
+				else {
+					return confirm("Батьки дозволили?");
+				}
+			}
+			let age = prompt("Ваш вік?");
+			if (chekAge(age)) {
+				console.log("Доступ дозволено!");
+			}
+			else {
+				console.log("У доступі відмовлено!");
+			}
+		*/
+		
+		/* 
+			// Таск на прості числа
+			function simpleNumbers(a, b) {
+				let s = "";
+				let tmp;
+				if (a > b) {
+					tmp = a;
+					a = b;
+					b = tmp;
+				}
+				for (let i = a; i <= b; i++) {
+					for (let j = 2; j < i; j++) {
+						if (i % j == 0) break;	// якщо у нас firstNumber (i) при діленні на змінну j дає остачу нуль даний цикл припиняє свою роботу і знову вертається до першого циклу;	
+					}
+					if (i == j) s += i + " ";	// після кожної ітерації JavaScript виводить тільки прості числа згідно запису i == j; Якщо умова справджується вона вноситься в змінну res;	
+				}
+				return s;
+			}
+			let firstNumber = parseInt(prompt("Enter first number", ""));
+			let secondNumber = parseInt(prompt("Enter second number", ""));
+			let res = simpleNumbers(firstNumber, secondNumber);
+			console.log(res); 
+		*/
+	</script>
+</body>
+
+</html>

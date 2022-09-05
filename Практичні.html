@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>For</title>
+</head>
+<body>
+<script>
+
+
+/* 
+    // Практична 1. Вивести всі значення ітерації від 1 до 5 в стрічці
+    let str = '';
+    for(let i=1; i<=5; i++){
+        str = str + i + ' ';
+    }
+    console.log(str)
+ */
+
+/* 
+    // Практична 2. Піднесення до степеня. a - число, b - степінь
+    // Крок 1. Рахує тільки додатню степінь
+    // Крок 2. Рахує додатню і нульову
+    // Крок 3. Рахує додатню, нульову і від'ємну
+    let num = +prompt('write number');
+    let step = +prompt('write degree');
+    let res = 1;
+    if(step>0){
+        for(let i=1; i<=step; i++){
+            res = res * num;
+        }
+    }
+    else if(step<0){
+        // step = step * (-1);
+        step = -step;
+        for(let i=1; i<=step; i++){
+            res = res * num;
+        }
+        res = 1 / res;
+    }
+    console.log(res) 
+*/
+
+/* 
+    // Практична 3. Cума діапазону чисел між введенними користувачем числами;
+    // Крок 1. Коли 1 число менше за 2
+    // Крок 2. Коли рахує суму незежно яке число більше 1 чи 2
+    let n1 = +prompt('write number 1');
+    let n2 = +prompt('write number 2');
+    let res = 0;
+    if(n1<n2){
+        for(let i=n1; i<=n2; i++){
+            res+=i;
+        }
+    }
+    else if(n1>n2){
+        for(let i=n2; i<=n1; i++){
+            res+=i;
+        }
+    }
+    console.log(res);
+    // Крок 3. Зробити через 1 цикл
+    let n1 = +prompt('write number 1');
+    let n2 = +prompt('write number 2');
+    let res = 0;
+    let change;
+    if(n1>n2){
+        change = n1;
+        n1 = n2;
+        n2 = change;
+    }
+    for (let i = n1; i <= n2; i++) {
+        res += i;
+    }
+    console.log(res);
+*/
+
+</script>
+</body>
+</html>

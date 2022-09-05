@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+  <style>
+
+      .main{
+          height: 500px;
+          width: 700px;
+          background-color: black;
+          border: 20px solid black;
+          border-radius: 15px;
+          display: flex;
+          justify-content: space-evenly;
+      }
+
+      .container1{
+          height: 500px;
+          width: 344px;
+          background-color: aliceblue;
+          text-align: center;
+          color: black;
+          font-size: 18px;
+          font-family: SansSerif;
+      }
+
+      .container2{
+          height: 500px;
+          width: 344px;
+          background-color: aliceblue;
+          text-align: center;
+          color: indianred;
+          font-size: 18px;
+          font-family: SansSerif;
+      }
+
+      #input{
+          border-top: none;
+          border-left: none;
+          border-right: none;
+          background-color: aliceblue;
+          outline: none;
+      }
+
+      #emptyField{
+          position: absolute;
+          display: none;
+          justify-content: center;
+          align-items: center;
+          height: 100px;
+          width: 400px;
+          background-color: lightgrey;
+          top: 30%;
+          left: 25%;
+      }
+
+      #emptyField img{
+            width: 20px;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+
+      #removeError{
+          position: absolute;
+          display: none;
+          justify-content: center;
+          align-items: center;
+          height: 100px;
+          width: 400px;
+          background-color: bisque;
+          top: 30%;
+          left: 25%;
+      }
+
+      #removeError img{
+          width: 20px;
+          position: absolute;
+          right: 10px;
+          top: 10px;
+      }
+
+      #alreadyAdded{
+          position: absolute;
+          display: none;
+          justify-content: center;
+          align-items: center;
+          height: 100px;
+          width: 400px;
+          background-color: azure;
+          top: 30%;
+          left: 25%;
+      }
+
+      #alreadyAdded img{
+          width: 20px;
+          position: absolute;
+          right: 10px;
+          top: 10px;
+      }
+
+
+
+  </style>
+
+
+</head>
+<body>
+
+
+<div class="main">
+
+    <div id="taskList" class="container1">
+        <p style= "color: indianred">Added List</p>
+    </div>
+
+    <div class="container2" >
+        <p>Add a new task to the list</p>
+        <input type="text" id="input">
+
+        <p><button id="addBtn" onclick="handleAdd()">Add</button></p>
+
+    </div>
+
+</div>
+
+<div id="emptyField">
+    <img onclick="arrowClick()"
+            src="https://img.favpng.com/8/7/25/computer-icons-clip-art-png-favpng-PKA0vtAa7u4ktT5jZC9TrJ0cw_t.jpg"/>
+    <p>No empty field allowed</p>
+</div>
+
+<div id="removeError">
+    <img onclick="arrowClick2()"
+         src="https://img.favpng.com/8/7/25/computer-icons-clip-art-png-favpng-PKA0vtAa7u4ktT5jZC9TrJ0cw_t.jpg"/>
+    <p> Not allowed to remove the first List </p>
+</div>
+
+<div id="alreadyAdded">
+    <img onclick="arrowClick3()"
+         src="https://img.favpng.com/8/7/25/computer-icons-clip-art-png-favpng-PKA0vtAa7u4ktT5jZC9TrJ0cw_t.jpg"/>
+    <p> This already existed in the list </p>
+</div>
+
+
+<script src="TodoListPr.js"></script>
+</body>
+</html>

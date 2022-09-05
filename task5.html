@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task5</title>
+</head>
+
+<body>
+    <form name="f1">
+        <select name="list">
+            <option selected>Text1</option>
+            <option>Text2</option>
+            <option>Text3</option>
+            <option>Text4</option>
+            <option>Text5</option>
+        </select>
+        <input type="button" name="show" value="show">
+    </form>
+
+    <script>
+        let df = document.forms.f1;
+        df.list.onchange = function () {
+            for (let i = 0; i < df.list.length; i++) {
+                if (df.list.options[i].selected) {
+                    df.list.options[i].innerHTML += '+'; // додаємо +
+                }
+            }
+        }
+        df.show.onclick = function () {
+            alert(df.list.value);
+        }
+    </script>
+</body>
+
+</html>

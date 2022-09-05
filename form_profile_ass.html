@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .mainContainer{
+            height: 700px;
+            width: 1270px;
+            /*background-color: red;*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box{
+            height: 650px;
+            width: 500px;
+            /*background-color: darkgrey;*/
+            /*border: 1px solid grey;*/
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.5);
+
+        }
+
+        .topBox{
+            height: 60px;
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+            background-color: mediumseagreen;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            color: white;
+            font-weight: bolder;
+            font-size: 24px;
+        }
+        .midBox{
+            height: 530px;
+            width: 450px;
+            /*background-color: darkgrey;*/
+            margin: 30px 25px;
+        }
+        #fname{
+            height: 30px;
+            width: 440px;
+            border: 0.5px solid grey;
+            border-radius: 3px;
+        }
+        #lname{
+            height: 30px;
+            width: 440px;
+            border: 0.5px solid grey;
+            border-radius: 3px;
+        }
+        #mail{
+            height: 30px;
+            width: 440px;
+            border: 0.5px solid grey;
+            border-radius: 3px;
+        }
+        #button{
+            height: 45px;
+            width: 100%;
+            border-radius: 5px;
+            border: 0 solid grey;
+            background-color: forestgreen;
+            font-family: sans-serif;
+            color: white;
+            font-weight: normal;
+            font-size: 20px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.5);
+        }
+        #positions{
+            border: 0.5px solid grey;
+            border-radius: 2px;
+            height: 30px;
+            width: 200px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="mainContainer">
+    <div class="box">
+        <div class="topBox">Create your account</div>
+        <div class="midBox">
+            <form action="" name="form" id="signedOut">
+                <div>
+                    <label for="fname">First name</label>
+                    <p><input type="text" id="fname" name="fname" placeholder="First Name">
+                    </p><br>
+                </div>
+
+
+
+                <div>
+                    <label for="lname">Last name</label><br>
+                    <p><input type="text" id="lname" name="lname" placeholder="Last Name">
+                    </p><br>
+                </div>
+                <div>
+                    <label for="mail">Email address</label><br>
+                    <p><input type="email" id="mail" name="user_email" placeholder="Email">
+                        </p><br>
+                </div>
+                <div>
+                    <input type="radio" name="gender" value="man"> Man
+                    <input type="radio" name="gender" value="woman"> Woman
+                    <br><br>
+                </div>
+                <div>
+                    <p><label>Position</label><br></p>
+                    <select name="positions" id="positions">
+                        <option value="">--Choose a position--</option>
+                        <option value="frontend">Frontend</option>
+                        <option value="backend">Backend</option>
+                        <option value="qc/qa">QC/QA</option>
+                    </select>
+                </div><br>
+                <div>
+                    <p><input type="checkbox" name="agree">
+                    <label>I agree to all statements and Terms of Service</label>
+                </div>
+                <span id="error" style="display: none; color: red"></span>
+                <p><button type ="button" id="button" name="submit" value="">Sign Up</button></p>
+                </p>
+
+            </form>
+
+            <div id="signedIn" style= "display: none; height: 150px; background-color: grey">
+                <img src="" alt="" style="width: 100px">
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <button id="signOutBtn">Sign Out</button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="form_profile_ass.js"></script>
+</body>
+</html>

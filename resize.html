@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JavaScript Window Resize Event</title>
+</head>
+<body>
+    <div id="result"></div>
+    <script>   
+    /* 
+    Ширина / висота вікна
+        Щоб отримати ширину / висоту вікна, можна взяти властивості clientWidth / clientHeight з document.documentElement:
+        alert(document.documentElement.clientHeight)
+
+        Не window.innerWidth/Height!!!
+            Браузери також підтримують властивості window.innerWidth/innerHeight. 
+            Начебто, схоже на те, що нам потрібно. Чому ж не використовувати їх?
+
+            Якщо є смуга прокрутки, і вона займає якесь місце, 
+            то властивості clientWidth/clientHeight вказують на ширину/висоту документа без неї (за її вирахуванням). 
+            Іншими словами, вони повертають висоту/ширину видимої частини документа, доступною для вмісту.
+
+            A window.innerWidth/innerHeight включають в себе смугу прокрутки.
+            Якщо смуга прокрутки займає деякий місце, то ці два рядки виведуть різні значення:
+
+        alert( window.innerWidth ); // повна ширина вікна
+        alert( document.documentElement.clientWidth ); // ширина вікна без смуга прокрутки
+
+        У більшості випадків нам потрібна доступна ширина вікна: для малювання або позиціонування. 
+        Смуга прокрутки «з'їдає» її частина. Тому слід використовувати documentElement.clientHeight/Width.
+    */
+
+    // Визначення функції слухача подій
+    function displayWindowSize(){
+        // Отримання ширини та висоти вікна без урахування смуг прокрутки
+        const w = document.documentElement.clientWidth;
+        const h = document.documentElement.clientHeight;
+        
+        // Відображення результату всередині елемента div
+        document.getElementById("result").innerHTML = "Width: " + w + ", " + "Height: " + h;
+    }
+     
+    // Приєднання функції слухача подій до події зміни розміру вікна
+    window.addEventListener("resize", displayWindowSize);
+    
+    // Перший виклик функції
+    displayWindowSize();
+    </script>
+    <p><strong>Note:</strong> Please resize the browser window to see how it works.</p>
+</body>
+</html> 

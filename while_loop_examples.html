@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>For</title>
+</head>
+<body>
+<script>
+
+/*  
+    // In JS there are 3 types of cycles: with recalculation, with precondition, with postcondition
+    // Loop for is a loop with recalculation
+    // for (counter start; cycle condition; counter step) {
+    // body of the cycle
+    //}
+ */
+
+/*
+   // Example 1. A cycle that runs 3 times
+    for (let i = 1; i <= 3; i ++) {
+        // document.write ('<h1> Loop' + i + '</h1>')
+        document.write (`<h2> Loop $ {i} </h2>`)
+    }
+*/
+
+    // Example 2. The start of the counter can be negative
+    // for (let count = -100; count <= 100; count += 10) {
+    //     document.write(`<h2> Loop ${count} </h2>`);
+    // }
+
+
+/*
+    // Example 3. The step of the counter can be a formula
+    for(let count=200; count>0;count=count/2 - 20){
+        document.write(`<h2>Loop ${count}</h2>`)
+    }
+*/
+
+/* 
+    // Example 4. The cycle works as many times as we specified
+    let n = +prompt('write count loop');
+    for(let i=1; i<=n; i++){
+        document.write(`<h2>Loop ${i}</h2>`)
+    }
+ */
+
+/* 
+    // Example 5. The cycle runs from and to the specified value
+    let start = +prompt('write start number');
+    let end = +prompt('write end number');
+    for(let i=start; i<=end; i++){
+        document.write(`<h2>Loop ${i}</h2>`)
+    }
+ */
+
+/*  
+    // Example 6. Cycle in cycle
+    document.write(`<h2>Loop Start</h2>`)
+    for(let i=1; i<=10; i++){
+        document.write(`<h3>Loop Outside ${i}</h3>`);
+        for(let j=1; j<=3; j++){
+            document.write(`<h4>Loop Inside ${j}</h4>`);
+        }
+        if(i==5){
+            document.write(`<h1>Half Loop</h1>`);
+        }
+    }
+    document.write(`<h2>Loop End</h2>`)
+ */
+
+/*
+    // Practical 1. Practical 1. Print all iteration values from 1 to 5 in the tape
+    let str = '';
+    for(let i=1; i<=5; i++){
+        str = str + i + ' ';
+    }
+    console.log(str)
+ */
+
+/* 
+    // Practical 2. Exaltation to the degree. a - number, b - degree
+    // Step 1. Counts only the positive degree
+    // Step 2. Counts positive and zero
+    // Step 3. Counts positive, zero and negative
+    let num = +prompt('write number');
+    let step = +prompt('write degree');
+    let res = 1;
+    if(step>0){
+        for(let i=1; i<=step; i++){
+            res = res * num;
+        }
+    }
+    else if(step<0){
+        // step = step * (-1);
+        step = -step;
+        for(let i=1; i<=step; i++){
+            res = res * num;
+        }
+        res = 1 / res;
+    }
+    console.log(res) 
+*/
+
+/* 
+    // Practical 3. The sum of the range of numbers between the numbers entered by the user;
+    // Step 1. When 1 number is less than 2
+    // Step 2. When counting the sum, no matter which number is greater than 1 or 2
+    let n1 = +prompt('write number 1');
+    let n2 = +prompt('write number 2');
+    let res = 0;
+    if(n1<n2){
+        for(let i=n1; i<=n2; i++){
+            res+=i;
+        }
+    }
+    else if(n1>n2){
+        for(let i=n2; i<=n1; i++){
+            res+=i;
+        }
+    }
+    console.log(res);
+    // Step 3. Make after 1 cycle
+    let n1 = +prompt('write number 1');
+    let n2 = +prompt('write number 2');
+    let res = 0;
+    let change;
+    if(n1>n2){
+        change = n1;
+        n1 = n2;
+        n2 = change;
+    }
+    for (let i = n1; i <= n2; i++) {
+        res += i;
+    }
+    console.log(res);
+*/
+
+</script>
+</body>
+</html>

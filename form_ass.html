@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .mainContainer{
+            height: 100px;
+            width: 1100px;
+            /*background-color: grey;*/
+            display: flex;
+            align-content: center;
+            justify-content: space-evenly;
+        }
+
+        .text1{
+            margin-left: 50px;
+        }
+
+        .text2{
+            margin-left: 50px;
+        }
+
+        .firstMain{
+            height: 30px;
+            width: 300px;
+            radius:  5px;
+        }
+
+        .move{
+            height: 37px;
+            width: 300px;
+            background-color: forestgreen;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: ".SF NS";
+            border-radius: 3px;
+        }
+
+        .lastMain{
+            height: 30px;
+            width: 300px;
+            radius: 5px;
+        }
+
+        .place{
+            height: 30px;
+            width: 1000px;
+            radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<form name="t1" id="task1">
+<div class="text1">
+<h1>Task Move</h1>
+<p> Write a word in the input and click to move to move the written word
+into the next input</p>
+</div>
+
+<div class="mainContainer">
+    <input class="firstMain" type="text" name="firstWord">
+    <input type="button" name="btn" class="move" value="Move">
+    <input class="lastMain" type="text" name="lastWord">
+</div>
+</form>
+
+<div class="text2">
+<h1>Task Placeholder</h1>
+<p> Write a word in the input and it stays on the placeholder</p>
+</div>
+
+<div class="mainContainer">
+    <input class="place" type="text" name="placeH">
+</div>
+
+<script src="form_ass.js">
+
+</script>
+</body>
+</html>

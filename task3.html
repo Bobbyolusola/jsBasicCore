@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task3</title>
+</head>
+
+<body>
+    <form name="f1">
+        <p>
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+        </p>
+        <p><input type="button" name="check" value="check"></p>
+    </form>
+    <script>
+        // Одна і та сама кнопка робить дві дії - чек і анчек.
+        // Натиснули, всі чекбокси чекнуті, кнопка змінала своє значення на анчек, натиснули на ту саму кнопку вдруге всі чекбокси анчекнуті
+        let df = document.forms.f1;
+        df.check.onclick = function () {
+            let swap;
+            if (df.check.value == "check") {
+                df.check.value = "uncheck";
+                swap = true;
+            }
+            else if (df.check.value == "uncheck") {
+                df.check.value = "check";
+                swap = false;
+            }
+            for (let i = 0; i < df.length - 1; i++) {
+                df.elements[i].checked = swap;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>switch, function declaration</title> 
+</head>
+<body>
+
+
+<script>
+/* 
+	// Приклад 1.
+	// Конструкція switch замінює собою відразу кілька if.
+	// Вона являє собою більш наочний спосіб порівняти вираз відразу з декількома варіантами.
+	switch (значення) {
+		case ідентифікатор:
+			дія
+			break;
+		case ідентифікатор:
+			дія
+			break;
+		default:
+			дія
+			break;
+	} 
+	let country = prompt('write ccountry car');
+	switch (country) {
+		case 'germany':
+			console.log('Audi, BMW, Mercedes')
+			break;
+		case 'france':
+			console.log('Pegeout, Renault, Citroen')
+			break;
+		case 'italia':
+			console.log('Ferrari, Maserati, Fiat')
+			break;
+        case 'japan':
+        case 'china':
+            console.log('Cherry, Hyundai');
+            break;
+		default:
+			console.log('Maybe its not a car')
+			break;
+	}
+*/
+	
+/* 
+	Функції в JavaScript є значеннями. Їх можна привласнювати, передавати, створювати в будь-якому місці коду.
+	Функції є основними «будівельними блоками» програми.
+*/
+
+/* 
+	// 1.1 Простий приклад ф-ї
+	function sayHello(){
+		console.log(`Hello Ivan`)
+	}
+	sayHello('Ivan'); 
+*/
+
+/* 
+	// 1.2 Ф-я з 1 параметром
+	function sayHello(a){ // a – параметр функції
+		console.log(`Hello ${a}`)
+	}
+	sayHello('Ivan'); 
+*/
+
+/* 
+	// 1.3 Ф-я з 2 параметрами
+	function sayHello(a,b){ // a,b – параметр може бути декілька
+		console.log(`Hello ${a} ${b}`)
+	}
+	sayHello('Ivan','Ivanov'); 
+*/
+
+/* 
+	// Параметри функції можна форматувати значеннями за замовчуванням
+	// 1.4 Старіший варіант
+	function profile(firstName, secondName){
+		firstName = firstName || 'guest'
+		secondName = secondName || 'guestovych'
+		console.log(`Hello ${firstName} ${secondName}`)
+	}
+	profile('Ivan', 'Ivanov');
+	profile('Petro');
+	profile();
+*/
+
+/* 
+	// 1.5 Новіший варіант
+	function profile(firstName='guest', secondName='guestovych'){
+		console.log(`Hello ${firstName} ${secondName}`)
+	}
+	profile('Ivan', 'Ivanov');
+	profile('Petro');
+	profile();
+*/
+
+/* 
+	За допомогою інструкції return функція може повернути деяке значення (результат роботи функції) програмою, яка її викликала. 
+	Значення, що повертається передається в точку виклику функції.
+*/
+
+/* 
+	function sayHello(a,b){
+		return `Hello ${a} ${b}`
+	}
+	console.log(sayHello('Ivan','Ivanov')) 
+*/
+
+/* 
+	Інструкція return може бути розташована в будь-якому місці функції. Як тільки буде досягнута інструкція return, 
+	функція повертає значення і негайно завершує своє виконання. Код, розташований після інструкції return, буде проігнорований:
+*/
+
+/* 
+	function sayHello(a,b){
+		return `Hello ${a} ${b}`
+		console.log('Не спрацює');// Цей console.log не буде виконуватися
+		
+	}
+	console.log(sayHello('Ivan','Ivanov'))  
+*/
+
+/* Усередині функції можна використовувати кілька інструкцій return: */
+
+/* 	
+	function sayHello(a,b){
+		if(a=='Ivan') return `Hello ${a} ${b}`
+		else return `Stop ${a} ${b}`
+	}
+	console.log(sayHello('Ivan','Ivanov'))   
+*/
+
+// Область видимості 
+// 2.1 Змінна створена в середині ф-ї поза нею не видима
+/*
+	function f1(){
+		let a = 10;
+		console.log(a);//10
+	}
+	f1();
+	console.log(a);//error
+*/
+// 2.2 Змінна створена з тим самим іменем в середині ф-ї та поза нею поза не пересікаються
+/* 
+	let a = 20;
+	function f1(){
+		let a = 10;
+		console.log(a);//10
+	}
+	f1();
+	console.log(a);//20
+*/
+// 2.3 Змінна створена створена поза ф-ю можна переприсвоїти всередині ф-ї
+/* 
+	let a = 20;
+	function f1(){
+		a = 10;
+		console.log(a);//10
+	}
+	f1();
+	console.log(a);//10
+*/
+
+// 2.4 Не можна створити змінну з тим самим іменем що і параметр ф-ї
+/* 
+	let a = 20;
+	function f1(a){
+		let a = 10;
+		console.log(a);//error
+	}
+	f1(30);
+	console.log(a);
+*/
+// 2.5 Переприствоєння параметру ф-ї
+/* 
+	let a = 20;
+	function f1(a){
+		a = 10;// переприсвоюємо значення 30 на 10
+		console.log(a);//10
+	}
+	f1(30);
+	console.log(a);//20
+*/
+
+/* 
+	Всі функції мають два неявних параметра: arguments і this. 
+	Під словом неявний мається на увазі, що ці характеристики не перераховуються явно в оголошенні функції. 
+	Ці параметри також неявно инициализируются при виконанні функції. 
+	До них можна звертатися в самій функції так само, як і до будь-яким іншим явно встановленим параметрам.
+*/
+
+
+/*
+	// 3.1 Передамо в ф-ю мешне значень чим є параметрів
+	function f1(a,b,c){
+		console.log(a);
+		console.log(b);
+		console.log(c);//undefined	
+	}
+	f1(3,4);
+*/
+
+/*
+	// 3.2 Якщо в ф-ї немає параметрів значення можна витягнути черех псевдомасив arguments
+	function f2(){
+		console.log(arguments);// псевдомасив
+		console.log(arguments[0]);
+		console.log(arguments[1]);
+		console.log(arguments[2]);
+		console.log(arguments.length);
+	}	
+	f2(3,4,5);
+*/
+
+/* 
+	// 2.3 Виводимо всі з-ня через цикл і arguments
+	function f3(){
+		for(let i=0; i<arguments.length;i++){
+			console.log(arguments[i]);
+		}
+	}	
+	f3(3,4);
+	f(3,4,5);
+	f(3,4,5,6);
+*/
+
+/* 
+	Параметр з префіксом ... називається додатковим (або необов'язковим). Додатковий параметр вказується в якості останнього параметра. 
+	Додатковий параметр - це масив, в який зберігаються зайві аргументи, коли кількість переданих аргументів перевищує кількість параметрів:
+*/
+
+/* 
+	function f(a, ...arg){
+		console.log(arg); // масив з значеннями які не передалися в параметри
+		console.log(arguments);// псевдомасив
+	}
+	f(1,2,3) 
+*/
+
+</script>
+</body>
+</html>
+	 

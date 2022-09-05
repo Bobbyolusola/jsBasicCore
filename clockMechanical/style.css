@@ -1,0 +1,51 @@
+#sec{
+    height: 120px;
+    width: 5px;
+    background-color: red;
+    position: absolute;
+    left: 642px;
+    top: 200px;
+    transform: rotate(180deg);
+    transform-origin: top left;
+    transition: 0.4s;
+}
+#min{
+    height: 90px;
+    width: 5px;
+    background-color: black;
+    position: absolute;
+    left: 638px;
+    top: 200px;
+    transform: rotate(180deg);
+    transform-origin: top left;
+    transition: 0.4s;
+}
+#hourse{
+    height: 60px;
+    width: 5px;
+    background-color: black;
+    position: absolute;
+    left: 643px;
+    top: 195px;
+    transform: rotate(180deg);
+    transform-origin: top left;
+    transition: 0.4s;
+}
+.dot{
+    position: absolute;
+    left: 633px;
+    top: 191px;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: black;
+}
+#clock{
+    height: 280px;
+    width: 280px;
+    background-image: url("clock.png");
+    background-size: contain;
+    position: absolute;
+    left: 500px;
+    top: 60px;
+}

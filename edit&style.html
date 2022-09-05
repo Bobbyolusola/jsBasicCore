@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit&style</title>
+    <style>
+
+        #MainContainer{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        #box1{
+            margin-top: 15px;
+            height: 300px;
+            width: 50%;
+            background: whitesmoke;
+            border: 1px solid lightgrey;
+            border-radius: 3px;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        #innerBox1{
+            width: 88%;
+        }
+
+        #editbtn{
+            height: 30px;
+            width: 50px;
+            background-color: #E2B206;
+            border: 0px;
+            border-radius: 2px;
+        }
+
+        #style{
+            height: 30px;
+            width: 50px;
+            background-color: #7196AA;
+            border: 0px;
+            border-radius: 2px;
+            color: white;
+        }
+
+        #editContainer{
+            height: 300px;
+            width: 50%;
+            background: whitesmoke;
+            border: 1px solid lightgrey;
+            border-radius: 3px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #styleContainer{
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            height: 300px;
+            width: 50%;
+            background: whitesmoke;
+            border: 1px solid lightgrey;
+            border-radius: 3px;
+        }
+
+        #subStyleContainer{
+            display: none;
+            height: 300px;
+            width: 85%;
+            flex-direction: column;
+            align-content: center;
+        }
+
+        #editArea{
+            margin: 20px;
+        }
+
+        #editAddBtn{
+            height: 30px;
+            width: 50px;
+            background-color: indianred;
+            border-radius: 2px;
+            border: none;
+            color: white;
+        }
+
+        #editSaveBtn{
+            height: 30px;
+            width: 50px;
+            background-color: green;
+            border: 0px;
+            border-radius: 2px;
+            border: none;
+            color: white;
+        }
+
+        #textBgColor{
+            width: 100%;
+            height: 45px;
+            display: flex;
+
+            /*background-color: red;*/
+        }
+        .colorBox{
+            width: 45px;
+            height: 44px;
+            margin: 2px;
+
+        }
+
+        .red{
+            background-color: red;
+        }
+
+        .green{
+            background-color: green;
+        }
+
+        .blue{
+            background-color: blue;
+        }
+
+        .grey{
+            background-color: grey;
+        }
+
+        #textBtn{
+            height: 30px;
+            width: 90px;
+            color: white;
+            background-color: #333333;
+        }
+        #colorBtn{
+            height: 30px;
+            width: 150px;
+            color: white;
+            background-color: #333333;
+            margin-left: 5px;
+        }
+
+        #textAl{
+            display: none;
+        }
+        #bgAl{
+            display: none;
+            margin-right: 10px;
+        }
+
+        #addContainer{
+            margin-top: 20px;
+            display: none;
+            height: 400px;
+            width: 73.2%;
+            background: whitesmoke;
+            border: 1px solid lightgrey;
+            border-radius: 3px;
+            margin-left: 40px;
+        }
+
+        #radForm{
+            margin-left: 40px;
+        }
+
+        #countTrTd{
+            display: flex;
+            flex-direction: column;
+        }
+        #addTable{
+            display: none;
+            height: 400px;
+            width: 90%;
+            margin-left: 40px;
+        }
+        #addTableBtn{
+            height: 30px;
+            width: 100px;
+            background-color: indianred;
+            border-radius: 2px;
+            border: none;
+            color: white;
+        }
+
+        #addList{
+            display: none;
+            height: 400px;
+            width: 80%;
+            margin-left: 40px;
+        }
+        #EditSect{
+            width: 80%;
+            border-style: ;
+            border-color: ;
+        }
+        #addListBtn{
+            height: 30px;
+            width: 100px;
+            background-color: green;
+            border-radius: 2px;
+            border: none;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="MainContainer">
+    <div id="box1">
+        <div id="innerBox1">
+<p>Lorem ipsum dolor sit amet.</p>
+
+<p>Lorem ipsum dolor sit amet.</p>
+
+<p>Lorem ipsum dolor sit amet.</p>
+
+<p>Lorem ipsum dolor sit amet.</p>
+
+<p>Lorem ipsum dolor sit amet.</p>
+        </div>
+
+    </div>
+    <div id="editStyle">
+        <p>
+            <button id="editbtn" onclick = handleEdit() >Edit</button>&nbsp;
+            <button id="style" onclick = handleStyle() >Style</button>
+        </p>
+    </div>
+
+
+
+
+
+    <div id="editContainer">
+            <textarea id="editArea" cols="70" rows="13"></textarea>
+            <div>
+                <button id="editAddBtn" onclick = handleEditAddBtnClick() >  Add </button>&nbsp;
+                <button id="editSaveBtn" onclick = handleEditSaveBtnClick() >  Save </button>
+            </div>
+    </div>
+
+    <div id="styleContainer">
+        <div id="subStyleContainer">
+            <br/>
+            <b>Font Size</b>
+            <form name="fontSize">
+                <input type="radio" value="12px" name="size"> 12px
+                <input type="radio" value="15px" name="size"> 15px
+                <input type="radio" value="20px" name="size"> 20px
+                <input type="radio" value="24px" name="size"> 24px
+            </form>
+            <br>
+
+            <b>Font Family</b>
+            <form name="family">
+                <select id="selectFamily">
+                    <option value="" selected disabled hidden>Select font family</option>
+                    <option value="cursive">Cursive</option>
+                    <option value="fantasy">fantasy</option>
+                    <option value="monospace">monospace</option>
+                    <option value="sans-serif">sans-serif</option>
+                </select>
+            </form>
+            <br>
+
+            <b>Colors</b>
+            <div id="textBgColor">
+                <div><button type="button" id="textBtn" onclick = handleTextColor()>Color of text</button>
+                    <div id="textAl">
+                        <div>
+                            <div class=" red colorBox " onclick = "changeFontColor('red')"> red </div>
+                            <div class=" green colorBox" onclick = "changeFontColor('green')"> green </div>
+                        </div>
+                        <div>
+                            <div class=" blue colorBox" onclick = "changeFontColor('blue')"> blue </div>
+                            <div class=" grey colorBox" onclick = "changeFontColor('grey')"> grey </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div><button type="button" id="colorBtn" onclick = handleBgColor() >Color of background</button>
+                    <div id="bgAl">
+                        <div>
+                            <div class=" red colorBox" onclick = "changeBgrndColor('red')"> red </div>
+                            <div class=" green colorBox" onclick = "changeBgrndColor('green')"> green </div>
+                        </div>
+                        <div>
+                            <div class=" blue colorBox" onclick = "changeBgrndColor('blue')"> blue </div>
+                            <div class=" grey colorBox" onclick = "changeBgrndColor('grey')"> grey </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div id="addContainer">
+        <div id="radForm">
+            <form name="addForm">
+            <h3>Choose what you want:</h3>
+                <input type="radio" name="add" value="table">table
+                <input type="radio" name="add" value="list">List
+            </form>
+        </div><br/>
+            <div id="addTable">
+                <form name="addTableForm">
+                    <div>
+                        <tr>
+                            <td>
+                                <label>Count TR:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </td>
+                            <td>
+                                <input type="text" name="countTr" style="width: 400px; height: 25px" placeholder="Tr"/>
+                            </td>
+                        </tr>
+                        <br/><br/>
+                        <tr>
+                            <td>
+                                <label>Count TD:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </td>
+                            <td>
+                                <input type="text" name="countTd" placeholder="Td" style="width: 400px; height: 25px;"/>
+                            </td>
+                        </tr>
+                    </div>
+                    <h4>Add style to your table:</h4>
+                    <tr>
+                        <td>
+                            <label>Width of TD:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                        </td>
+                        <td>
+                            <input type="text" name="width" style="width: 150px; height: 25px;" placeholder="width of TD" />
+                        </td>
+                    </tr><br>
+
+                    <tr><br>
+                        <td>
+                            <label>Height of TD:</label>&nbsp;&nbsp;&nbsp;
+                        </td>
+                        <td>
+                            <input type="text" name="height"   style="width:150px;  height: 25px;" placeholder="Height of TD"/>
+                        </td>
+                    </tr>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <tr>
+                        <td>
+                            <label>Width of border:</label>&nbsp;&nbsp;&nbsp;
+                        </td>
+                        <td>
+                            <input type="text" name="border"  style="width: 150px; height: 25px;" placeholder="Width of border"/>
+                        </td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        <td>
+                            <label>Color of border:</label>&nbsp;&nbsp;&nbsp;
+                        </td>
+                        <td>
+                            <select name="colors" style="width: 150px; height: 30px;">
+                                <option value="" selected disabled hidden>Choose color</option>
+                                <option value="black">Black</option>
+                                <option value="red">Red</option>
+                                <option value="blue">Blue</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <br><br>
+                    <button type="submit" id="addTableBtn">Create Table</button>
+                </form>
+            </div>
+
+
+            <div id="addList">
+                <form name="addListForm">
+                    <tr>
+                        <td>
+                            <label>Count Li:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </td>
+                        <td>
+                            <input type="text" name="liCount" placeholder="Count Li" style="width: 400px; height: 25px;" />
+                        </td>
+                    </tr><br/><br/>
+                    <tr>
+                        <td>
+                            <label>Type of marks:</label>&nbsp;&nbsp;&nbsp;
+                        </td>
+                        <td>
+                            <select id="liType" style="width: 150px; height: 30px;>
+                                <option value="circle">Circle</option>
+                                <option value="disc">Disc</option>
+                                <option value="square">Square</option>
+                            </select>
+                        </td><br/><br/>
+                        <button type="submit" id="addListBtn">Create list</button>
+                    </tr>
+
+
+                    </select>
+                </form>
+            </div>
+        </div>
+
+
+
+
+</div>
+
+
+
+<script src="edit&style.js"></script>
+</body>
+</html>
+
+

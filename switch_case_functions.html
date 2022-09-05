@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Switch_case</title>
+</head>
+<body>
+<script>
+
+// switch case
+//     switch(value){
+//         case"value":
+//             do smth;
+//             break;
+//         default:
+//             do smth;
+//             break;
+// }
+
+// let fruit = prompt("enter a fruit");
+// switch(fruit){
+//     case "apple":
+//         console.log("fruit apple");
+//         break;
+//     case "banana":
+//         console.log("fruit banana");
+//         break;
+//     case "lemon":
+//         console.log("fruit lemon");
+//         break;
+//     case "":
+//         console.log("You enetered no fruit");
+//         break;
+//     case null:
+//         console.log("cancelled");
+//         break;
+//     default:
+//         console.log("no fruit")
+// }
+
+// Switch case doesn not jump out of the block condition when it found its first
+// true unless a break is applied, b ut if condition jumps out of its block when
+// it founds its first true condition. example of switch case is below;
+
+// let fruit = prompt("enter a fruit");
+// switch(fruit){
+//     case "apple":
+//         console.log("fruit apple");
+//     case "banana":
+//         console.log("fruit banana");
+//     case "lemon":
+//         console.log("fruit lemon");
+//     case "":
+//         console.log("You enetered no fruit");
+//     case null:
+//         console.log("cancelled");
+//     default:
+//         console.log("no fruit")
+// }
+
+// In switch case one can also make grouping as shown below;
+// let fruit = prompt("enter a fruit");
+// switch(fruit) {
+//     case "apple":
+//     case "banana":
+//     case "lemon":
+//         console.log("I know such fruits");
+//         break;
+//     case "":
+//         console.log("You enetered no fruit");
+//         break;
+//     case null:
+//         console.log("cancelled");
+//         break;
+//     default:
+//         console.log("no fruit");
+// }
+
+//FUNCTIONS: In functions, we first create a function inside the curly braces{} and call the function outside the curly braces{} as shown below;
+
+/*value(){
+    created condition
+}
+calling of created conditions.
+*/
+
+//FUNCTION DECLARATION - Declaration states with a function, while FUNCTION EXPRESSION expresses a function through a variable.
+// function sayHello(){
+//     console.log("Hello Bobby");
+// }
+// sayHello();
+// sayHello();
+// sayHello();
+
+
+// function getSum(a, b){
+//     console.log(arguments)
+//     console.log(a+b)
+// }
+// getSum(2, 2);
+// getSum(4, 5);
+// getSum(6, 7);
+
+
+// function getSum(a=0, b=1){
+//     console.log(a);
+//     console.log(b);
+//     console.log(a+b);
+// }
+// getSum(5, 3);
+
+// A function will pick values from its block and can also see values outside
+// its block. But it will only pick values from its block first as the priority,
+//it will only pick a value outside if there is no assigned value in its block
+// For example;
+
+// let c = 50;
+//
+// function getSum(a=0, b=1){
+//     console.log(c);
+//     console.log(b);
+//     console.log(a+b);
+//     let e = a*b;
+//     console.log(e);
+// }
+// getSum(5, 3);
+
+
+// let userName = 'Bobby';
+//
+// function showMessage() {
+//     let message = 'Hello, ' + userName;
+//     alert(message);
+// }
+//
+// showMessage(); // Привет, Вася
+
+
+// function showMessage(a, b) { // аргументы: from, text
+//     alert(a + ': ' + b);
+// }
+// showMessage('Hannah', 'hello!'); // Аня: Привет! (*)
+// showMessage('Jamil', "how are you?"); // Аня: Как дела? (**)
+
+
+
+// You can return a function as shown below;
+
+// let c = 50;
+//
+// function getSum(a=0, b=1){
+//     //let functionSummary =  a+b;
+//     //return functionSummary
+//     return a+b
+// }
+// let summary = getSum(a=2, b=3)
+// console.log(summary);
+
+
+
+// let answer1 = +prompt("enter first number");
+// let answer2 = +prompt("enter second number");
+
+//function getSum(a=2, b=3){-->
+   //return a+b;-->
+//}-->
+<!--function getMultiple(a=2, b=3){-->
+<!--    return a*b;-->
+<!--}-->
+// let summary = getSum(answer1, answer1)-->
+// let summary2 = getSum(answer2, answer2)-->
+// let summary3 = getSum(answer1, answer2)-->
+
+<!--let summary = getMultiple(answer1, answer1)-->
+<!--let summary2 = getMultiple(answer2, answer2)-->
+<!--let summary3 = getMultiple(answer1, answer2)-->
+
+<!--console.log(summary);-->
+<!--console.log(summary2);-->
+<!--console.log(summary3);-->
+
+// function getMultiple(a=0, b=0) {
+//     console.log(a * b);
+// }
+//
+// getMultiple(a=2, b = 3)
+//
+// console.log(summary);
+//
+// //OR
+
+// function getMultiple(a=0, b=0) {
+//      return a * b;
+// }
+// let multiple = getMultiple(a=2, b=3);
+//
+// console.log(multiple);
+//
+// let nextMultiple = getMultiple(multiple, b = multiple + 6)
+//
+// console.log(nextMultiple);
+
+
+
+// console.log(getMult(a=1, b=2));
+// console.log((getmult1(a=2, b=2)));
+
+// //FUNCTION DECLARATION
+// function getMult(a=0, b =0){ // Function declaration starts with a function
+//     return a*b;
+// }
+// OR
+// function getMult(a=2, b=3){
+//     console.log(a+b);
+// }
+// getMult();
+
+// //FUNCTION EXPRESSION
+// const getMult1 = function (a=0, b =0){ // This shows error, becos In function expression, a function is expressed through a variable.
+//     return a*b;
+// }
+//NOTE: You can't call function expression before it is created in a file but you can call
+// function declaration before it's created in a file.
+
+
+// const getMult = function (){
+//     let a = 3;
+//     let b = 4;
+//         return a+b;
+// }
+// //console.log(getMult())
+//
+// const returnFromFunc = getMult();
+// console.log(returnFromFunc);//4
+
+
+
+// const getMult = function (a,b){
+//     let c = 6;
+//     //console.log(a+b+c); // works fine because we are not returning a data.
+//     return a+b+c;//13
+//
+// }
+// //console.log(getMult());
+//
+// const returnFromFunc = getMult(a=3, b=4); // Undefined becos This expression works for returning a data
+// console.log(returnFromFunc);
+//
+
+// const winner =function(){
+//     return 'winner';
+// }
+// const result = winner()
+// console.log(result);
+
+// let number = function(a=2, b=6){
+//     return a*b;
+// }
+// let secNumber = number();
+// console.log(secNumber);
+
+
+//ARROW FUNCTION
+// let number = (a=2, b=6) => a*b;
+//
+// let secNumber = number();
+// console.log(secNumber);
+
+//OR
+// let number = (a, b) => a+b;
+//
+// let secNumber = number(a=2, b=4);
+// console.log(secNumber);
+
+//NOTE: In case there are a lot of logic in arrow function, Then we use the curly{} braces and return our data. e,g,
+// let number = (a, b) => {
+//     let c = 10;
+//     return a+b-c;
+// }
+// let secNumber = number(a=2, b=4);
+// console.log(secNumber);
+
+
+//RECURSION
+// Recursion occurs when a function calls itself inside of its body. e.g
+// function pow(a, b){
+//     return(b != 0) ? a * pow(a, b -1) : 1;
+// }
+// console.log(pow(a=2, b=5));
+//NOTE: The code above is simplified below;
+// function pow(a, b){
+//     if(b !== 0){   //return(b != 0) ? a * pow(a, b -1) : 1;
+//         return  a * pow(a, b -1);
+//     }else{
+//         return 1
+//     }
+// }
+// console.log(pow(a=2, b=3));
+//
+// 2 * pow(a=2, b=3-1)
+// 2 * 2 * pow(a=2, b=2-1)
+// 2 * 2 * 2 * pow(2, b=1-1)
+// 2 * 2 * 2 * 1
+
+//NOTE: In recursion, the function keeps calling itself in hos body until it is stopped with the ELSE condition.
+
+
+//ASSIGNMENT
+
+//1. Write the solution below the problem described using the switch construct:
+//The user enters a number in the prompt
+//After entering the number, an alert pops up announcing the time of year to which the number (month number) entered by the user belongs.If the number is not in the range from 1 to 12 then it is impossible.
+//--------------------------------------------------- ----------------------------------------
+// let number = prompt("Enter a number");
+// switch (number) {
+//     case "1":
+//         console.log("January");
+//         break;
+//     case "2":
+//         console.log("February");
+//         break;
+//     case "3":
+//         console.log("March");
+//         break;
+//     case "4":
+//         console.log("April");
+//         break;
+//     case "5":
+//         console.log("may");
+//         break;
+//     case "6":
+//         console.log("June");
+//         break;
+//     case "7":
+//         console.log("July");
+//         break;
+//     case "8":
+//         console.log("August");
+//         break;
+//     case "9":
+//         console.log("September");
+//         break;
+//     case "10":
+//         console.log("October");
+//         break;
+//     case "11":
+//         console.log("November");
+//         break;
+//     case "12":
+//         console.log("December");
+//         break;
+//     default:
+//         console.log("Not possible");
+// }
+
+// 2. Write the solution below the problem described using the function declaration:
+// Create a function that will take one number.
+//     In the middle of the function we check whether this number is prime.
+//     After checking, display the message in console.log ().
+
+// function num(){
+//     console.log("Its a prime number")
+// }
+// num();
+
+
+
+// 3. Write the solution below the problem described using the function declaration:
+// You need to create a function that returns the maximum numeric parameter passed to it.
+// The number of parameters in the function can be from 2 or more.
+// Example of work:
+// max (5, -2) - should return 5.
+// max (5, -2, 30, 6) - should return 30
+
+// function param(a, b){
+//     console.log(a);
+// }
+// param(a=5, b=-2);
+
+// function max(a, b, c, d){
+//     console.log(c);
+// }
+// max(a=5, b=-2, c= 30, d= 6);
+
+
+//Write the solution below the described problem using arrow function:
+//     Create a function that will take one numeric value.
+//     This value in the function will mean several elements of the Fibonacci sequence.
+//     Calculate this sequence and output all its elements to the console.
+
+//     Example of work:
+//     1. fib (5) - must return 1 1 2 3 5.
+// 2.  ib (10) - must return 1 1 2 3 5 8 13 21 34 55.
+
+// let num = (a, b, c, d, e) => a + b + c + d + e;
+//
+// let secNum = num(a=1, b=2, c=3, d=4, e=5);
+// console.log(secNum);
+
+// let num = (a, b, c, d, e) =>  a + b + c + d + e + f + g + h + i + j;
+// let secNum = num(a=1, b=2, c=3, d=4, e=5, f=6, g=7, h=8, i=9, j=10)
+// console.log(secNum);
+
+
+
+</script>
+</body>
+</html>

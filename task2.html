@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task2</title>
+</head>
+
+<body>
+    <form name="f1">
+        <p>
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+        </p>
+        <p><input type="button" name="check" value="check"></p>
+        <p><input type="button" name="uncheck" value="uncheck"></p>
+    </form>
+    <script>
+        // При кліку на check всі checkbox стали чекнутими, при настисканні на uncheck всі стали анчекнутими
+        let df = document.forms.f1;
+        df.check.onclick = function () { //check
+            for (let i = 0; i < df.length - 2; i++) {
+                df.elements[i].checked = true;
+            }
+        }
+        df.uncheck.onclick = function () { //uncheck
+            for (let i = 0; i < df.length - 2; i++) {
+                df.elements[i].checked = false;
+            }
+        }
+    </script>
+</body>
+
+</html>

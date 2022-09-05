@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #showScroll {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            z-index: 99;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 
+        Ширина / висота документа
+            Теоретично, тому що кореневих елементом документа є documentElement.clientWidth / Height, і він включає в себе весь вміст, 
+            ми можемо отримати повний розмір документа як documentElement.scrollWidth / scrollHeight.
+
+            Але саме на цьому елементі, для сторінки в цілому, ці властивості працюють не так, як передбачається. 
+            У Chrome / Safari / Opera, якщо немає прокрутки, то documentElement.scrollHeight може бути навіть менше, 
+            ніж documentElement.clientHeight! З точки зору елемента це неможлива ситуація.
+
+            Щоб надійно отримати повну висоту документа, нам слід взяти максимальну з цих властивостей:
+
+            let scrollHeight = Math.max(
+                document.body.scrollHeight, document.documentElement.scrollHeight,
+                document.body.offsetHeight, document.documentElement.offsetHeight,
+                document.body.clientHeight, document.documentElement.clientHeight
+            );
+
+            alert('Повна висота документа з прокручуваною частиною: ' + scrollHeight);
+
+            Чому? Краще не питайте. Ці невідповідності йдуть з давніх часів. Глибокої логіки тут немає.
+    -->
+
+    <!-- 
+        Отримання поточної прокрутки
+            Звичайні елементи зберігають поточний стан прокрутки в elem.scrollLeft/scrollTop.
+
+            Що ж зі сторінкою? У більшості браузерів ми можемо звернутися до documentElement.scrollLeft/Top, 
+            за винятком заснованих на старому WebKit (Safari), де є помилка (5991), 
+            і там потрібно використовувати document.body замість document.documentElement.
+
+            На щастя, нам зовсім не обов'язково запам'ятовувати ці особливості, 
+            тому що поточну прокрутку можна прочитати з властивостей window.pageXOffset / pageYOffset:
+
+            alert ('Поточна прокрутка зверху:' + window.pageYOffset);
+            alert ('Поточна прокрутка зліва:' + window.pageXOffset);
+
+            Ці властивості доступні тільки для читання.
+    -->
+
+    <!-- 
+        Прокрутка: scrollTo, scrollBy, scrollIntoView
+            Звичайні елементи можна прокручувати, змінюючи scrollTop / scrollLeft.
+
+            Ми можемо зробити те ж саме для сторінки в цілому, 
+            використовуючи document.documentElement.scrollTop / Left (крім заснованих на старому WebKit (Safari), 
+            де, як сказано вище, document.body.scrollTop / Left).
+
+            Є й інші способи, в яких подібних несовместимостей немає: 
+                спеціальні методи window.scrollBy (x, y) і window.scrollTo (pageX, pageY).
+            
+                Метод scrollBy (x, y) прокручує сторінку щодо її поточного стану. 
+                Наприклад, scrollBy (0,10) прокручує сторінку на 10px вниз.
+
+                <button onclick="window.scrollBy(0,10)">window.scrollBy(0,10)</button>
+
+                Метод scrollTo (pageX, pageY) прокручує сторінку на абсолютні координати (pageX, pageY). 
+                Тобто, щоб лівий-верхній кут видимої частини сторінки мав дані координати щодо лівого верхнього кута документа. 
+                Це все одно, що поставити scrollLeft / scrollTop. Для прокрутки в самий початок ми можемо використовувати scrollTo(0,0).
+
+                <button onclick="window.scrollTo(0,0)">window.scrollTo(0,0)</button>
+                
+                Ці методи однаково працюють для всіх браузерів.
+
+        scrollIntoView
+            
+            Для повноти картини давайте розглянемо ще один метод: elem.scrollIntoView (top).
+            Виклик elem.scrollIntoView (top) прокручує сторінку, щоб elem виявився вгорі. У нього є один аргумент:
+                - якщо top = true (за замовчуванням), то сторінка буде прокручена, щоб elem з'явився у верхній частині вікна. 
+                    Верхній край елемента суміщений з верхньою частиною вікна.
+                - якщо top = false, то сторінка буде прокручена, щоб elem з'явився внизу. 
+                    Нижній край елемента буде суміщений з нижнім краєм вікна.
+
+                Кнопка нижче прокрутить сторінку так, що вона сама опиниться вгорі:
+
+                <button onclick="this.scrollIntoView()">this.scrollIntoView()</button>
+
+                А наступна кнопка прокрутить сторінку так, що вона сама опиниться внизу
+
+                <button onclick="this.scrollIntoView(false)">this.scrollIntoView(false)</button>
+    -->
+
+    <!-- 
+        Подія прокрутки scroll дозволяє реагувати на прокрутку сторінки або елемента. 
+        Є багато хороших речей, які при цьому можна зробити, наприклад:
+            - Показати / приховати додаткові елементи управління або інформацію, грунтуючись на тому, в якій частині документа знаходиться користувач.
+            - Довантажити дані, коли користувач прокручує сторінку вниз до кінця.
+        Ось невелика функція для відображення поточної прокрутки: -->
+    <div id="showScroll"></div>
+    <button type="button" class="scroll-top" onclick="goToTop();">Go to Top</button>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <script>
+        window.addEventListener('scroll', function () {
+            document.getElementById('showScroll').innerHTML = window.scrollY + 'px';
+        });
+
+        function goToTop() {
+            // За допомогою методу window.scrollTo() можна прокрутити сторінку до верху
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+
+</html>

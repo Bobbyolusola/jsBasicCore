@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SignUpForm</title>
+
+    <style>
+        #MainBox{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #subMainBox{
+            height: 700px;
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header{
+            font-size: 24px;
+            font-weight: lighter;
+            margin-top: 20px;
+        }
+
+        #firstName{
+            margin-top: 10px;
+            height: 30px;
+            width: 250px;
+            border-color: gainsboro;
+            box-shadow: 0 0 2px #719ECE;
+            border-style: none;
+            outline-color: #719ECE;
+        }
+
+        #lastName{
+            margin-top: 20px;
+            height: 30px;
+            width: 250px;
+            border-color: gainsboro;
+            box-shadow: 0 0 2px #719ECE;
+            border-style: none;
+            outline-color: #719ECE;
+        }
+
+        #email{
+            margin-top: 20px;
+            height: 30px;
+            width: 250px;
+            border-radius: 3px;
+            border-color: gainsboro;
+            box-shadow: 0 0 2px #719ECE;
+            border-style: none;
+            outline-color: #719ECE;
+        }
+
+        #phone{
+            margin-top: 20px;
+            height: 30px;
+            width: 250px;
+            border-radius: 3px;
+            border-color: gainsboro;
+            box-shadow: 0 0 2px #719ECE;
+            border-style: none;
+            outline-color: #719ECE;
+        }
+
+        #pass{
+            margin-top: 20px;
+            height: 30px;
+            width: 250px;
+            border-radius: 3px;
+            border-color: gainsboro;
+            box-shadow: 0 0 2px #719ECE;
+            border-style: none;
+            outline-color: #719ECE;
+
+        }
+
+        #btn{
+            margin-top: 20px;
+            height: 37px;
+            width: 260px;
+            background-color: dodgerblue;
+            border-radius: 3px;
+            border-style: none;
+        }
+
+        /*!* The message box is shown when the user clicks on the password field *!*/
+        /*#message {*/
+        /*    display:none;*/
+        /*    background: #f1f1f1;*/
+        /*    color: #000;*/
+        /*    position: relative;*/
+        /*    padding: 20px;*/
+        /*    margin-top: 10px;*/
+        /*}*/
+
+        /*#message p {*/
+        /*    padding: 10px 35px;*/
+        /*    font-size: 18px;*/
+        /*}*/
+
+        /*!* Add a green text color and a checkmark when the requirements are right *!*/
+        /*.valid {*/
+        /*    color: green;*/
+        /*}*/
+
+        /*.valid:before {*/
+        /*    position: relative;*/
+        /*    left: -35px;*/
+        /*    content: "&#10004;";*/
+        /*}*/
+
+        /*!* Add a red text color and an "x" icon when the requirements are wrong *!*/
+        /*.invalid {*/
+        /*    color: red;*/
+        /*}*/
+
+        /*.invalid:before {*/
+        /*    position: relative;*/
+        /*    left: -35px;*/
+        /*    content: "&#10006;";*/
+        /*}*/
+    </style>
+</head>
+<body>
+
+<div id="MainBox">
+    <div id="subMainBox">
+        <header>Please sign up</header>
+        <form name="form" id="signIn">
+            <input type="text" id="firstName" name="fname" placeholder="First name">
+            <span id="errorfname" style="display: none; font-size: 12px; color: red"></span>
+
+            <input type="text" id="lastName" name="lname" placeholder="Last name">
+            <span id="errorlname" style="display: none; font-size: 12px; color: red"></span>
+
+            <input type="email" id="email" name="user_email" placeholder="Email Address">
+            <span id="errormail" style="display: none; font-size: 12px; color: red"></span>
+
+            <input type="text" id="phone" name="phoneNo" placeholder="Phone number">
+            <span id="errorphone" style="display: none; font-size: 12px; color: red"></span>
+
+            <input type="password" id="pass" name="pWord" placeholder="Password" autocomplete="on">
+<!--                   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one-->
+<!--                   number and one uppercase and lowercase letter, and at least 8 or more characters" required>-->
+            <span id="errorpass" style="display: none; font-size: 12px; color: red"></span>
+
+
+            <button type ="button" id="btn" name="submit" value="">Sign Up</button>
+        </form>
+    </div>
+</div>
+
+<!--<div id = "message">-->
+<!--    <h3> Password must contain the following;</h3>-->
+<!--        <p id="letter" class="invalid"> A <b>  lowercase </b> letter </p>-->
+<!--        <p id="capital" class="invalid"> A <b> capital (uppercase) </b> letter </p>-->
+<!--        <p id="number" class="invalid"> A <b> number </b> </p>-->
+<!--        <p id="length" class="invalid"> Minimun <b>  8 characters</b> </p>-->
+<!--</div>-->
+
+<script src="signUpForm.js"></script>
+</body>
+</html>
