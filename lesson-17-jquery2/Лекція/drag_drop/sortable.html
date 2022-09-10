@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <style>
+        ul {
+            float: left;
+            border: 5px groove #3C8FB7;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        li {
+            list-style-type: none;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("#block1, #block2").sortable({
+                connectWith: "#block1, #block2", // вказування іншого списку сортування для переміщення між ними
+                // appendTo: "#block1", // вказує селектор або елемент який використовується в якості контейнера для елемента під час його переміщення(по замовчуванню це батьківський елемент)
+                // axis:'y', //вісь переміщення також у
+                // cancel:'.cancel', // забороняє переміщення вибраного селектора
+                // containment:'parent',//обмежує рух границями іншого елементу.
+                // cursor:'move',// вид курсора під час переміщення
+                // delay:1000, // час початку перетягування
+                // distance:20, // відстань в пікселях після якої починається перетягування
+                //dropOnEmpty:false, //вказує чи можна переміщати елементи до іншого списку якщо він пустий. По замовчуванню true
+            });
+        });
+    </script>
+</head>
+
+<body>
+    
+    <ul id="block1">
+        <h3>Блок 1</h3>
+        <li class="default"><img src="img/1.jpg"></li>
+        <li class="default"><img src="img/1.jpg"></li>
+        <li class="default"><img src="img/1.jpg"></li>
+        <li class="default"><img src="img/1.jpg"></li>
+    </ul>
+
+    <ul id="block2">
+        <h3>Блок 2</h3>
+        <li class="default"><img src="img/2.jpg"></li>
+        <li class="default"><img src="img/2.jpg"></li>
+        <li class="default"><img src="img/2.jpg"></li>
+        <li class="default"><img src="img/2.jpg"></li>
+    </ul>
+
+</body>
+
+</html>

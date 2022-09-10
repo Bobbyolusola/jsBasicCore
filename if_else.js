@@ -1,14 +1,14 @@
 //alert("welcome");
 
-/* JS OPERATORS
+/* JS OPERATORS*/
 
-++a, a++
---a, a--
-+, -, /, *, %
-=, ==, ===, !, !=, !==
-<, >, >=, <=, &&, ||
-n+=i, n*=i, n-+i, n/=i
-*/
+// ++a, a++
+// --a, a--
+// +, -, /, *, %
+// =, ==, ===, !, !=, !==
+// <, >, >=, <=, &&, ||
+// n+=i, n*=i, n-+i, n/=i
+
 
 /*let a = 10;
 let b = "10";
@@ -59,12 +59,14 @@ if(age===null){
     console.log("You havn't entered a number")
 }*/
 
-/*let age = parseInt(prompt('type a numer'));
+
+/*let age = parseInt(prompt('type a number'));
 if (age>10 || age<5){ //one of this conditions has to return true
     console.log('You fall in the range')
 } else if(age===7){
     console.log('Your number passed')
-} else{
+}
+else{
     console.log('You entered no number')
 }*/
 
@@ -72,7 +74,7 @@ if (age>10 || age<5){ //one of this conditions has to return true
 /*// NOTE: if there are two 'true' conditions on different lines, only the first true condition will be read by the code.
 let age = parseInt(prompt('type a number'));
 if (age>10){
-    console.log('Age is less than 10')
+    console.log('Age is greater than 10')
 } else if(age<20){
     console.log('Age is less than 20')
 } else{
@@ -83,7 +85,7 @@ if (age>10){
 /*// NOTE: conditions should be written from one stage to another, just like age<=10 and next is age>=11 && age<20 and next is age>20 && age<30
 let age = parseInt(prompt('type a number'));
 if (age<=10){
-    console.log('Age is less than 10')
+    console.log('Age is less than or equals to 10')
 } else if(age>=11 && age<20){
     console.log('Age is less than 20')
 } else if(age>20 && age<30){
@@ -94,10 +96,10 @@ if (age<=10){
 
 
 //ASSIGNMENTS
-
-/*//1. Write a test on any topic with 10 questions. If the user answers correctly, we add a point.
- If the answer is incorrect then do nothing. At the end we display statistics on the number of correct answers out of a possible 10.
- And a message to the user about the level of knowledge about the points scored.
+/*
+//1. Write a test on any topic with 10 questions. If the user answers correctly, we add a point.
+ //If the answer is incorrect then do nothing. At the end we display statistics on the number of correct answers out of a possible 10.
+ //And a message to the user about the level of knowledge about the points scored.
 
 let count = 0;
 
@@ -139,10 +141,11 @@ console.log(`You have ${count} correct answers`);
 */
 
 
-/*//2. If the user enters "Name", ask for the password, if you click escape - display "Login canceled",
-if you enter something else - "I do not know you". Password check yes. If the password "LOGOS" is entered, then display "Welcome!",
-Otherwise - "Password is incorrect", when canceling - "Login canceled".
-----------------------------------------
+
+/* //2. If the user enters "Name", ask for the password, if you click escape - display "Login canceled",
+//if you enter something else - "I do not know you". Password check yes. If the password "LOGOS" is entered, then display "Welcome!",
+//Otherwise - "Password is incorrect", when canceling - "Login canceled".
+//----------------------------------------
 let name = prompt('Enter your name');
 let password;
 console.log(name);
@@ -159,13 +162,13 @@ if (name === null ){
     } else{
         console.log('Wrong Password')
     }
-}
-*/
+}*/
 
 
-/*//3. Write a program that gives the user to enter a number. After entering the number,
-an alert pops up announcing the time of year to which the number (month number) entered by the user belongs.
-If the number does not fall in the range from 1 to 12 then it is impossible.
+/*
+//3. Write a program that gives the user to enter a number. After entering the number,
+//an alert pops up announcing the time of year to which the number (month number) entered by the user belongs.
+//If the number does not fall in the range from 1 to 12 then it is impossible.
 
 let number = parseInt(prompt('Enter a number'));
 if(number === 1){
@@ -194,8 +197,8 @@ if(number === 1){
     alert('Welcome to the month of December')
 }else{
     alert('This is impossible');
-}*/
-
+}
+*/
 
 
 

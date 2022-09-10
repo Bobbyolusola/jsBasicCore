@@ -29,6 +29,7 @@ const addForm = document.forms[2];
 const addTableForm = document.forms[3];
 const addListForm = document.forms[4];
 
+const fontform = document.forms[0];
 
 fontForm.addEventListener("change", (e) => {
     getEBI("innerBox1").style.fontSize = e.target.value

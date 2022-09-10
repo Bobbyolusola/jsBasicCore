@@ -11,6 +11,7 @@ function checkIfAlreadyInList(value){ // checking if a list already existed
 
 }
 
+
 function handleAdd(){
     //console.log("click");
     const inputValue = getId('input').value;

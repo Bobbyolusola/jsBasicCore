@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <style>
+        #extra {
+            width: 200px;
+            height: 200px;
+            background: brown;
+        }
+
+        #parent {
+            width: 500px;
+            height: 400px;
+            border: 1px solid green;
+        }
+
+        #move {
+            background: cyan;
+            width: inherit;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="parent">
+        <div id="extra">
+            <div id="move"></div>
+        </div>
+    </div>
+    <div id="res"></div>
+    <script>
+        $(document).ready(f);
+
+        function f() {
+            $("#extra").draggable({
+                // "enable" && "disable"; // включити і відключити функцію
+                // containment:"#parent",//Обмежує рух "window","document"
+                // containment:[50,50,200,200],//обмежує координатами
+                // axis:"x", // обмежує рух по іксах
+                cursor: "move", // перетворює курсор
+                // revert: true, // вертає елемент. false по замовчуванню
+                handle: "#move", //  задає зону перетягування
+                revertDuration: 1000, //час вертання
+                start: function (event, ui) {
+                    $("#res").text("Start!!!"); // подію початку перетягування
+                },
+                stop: function (event, ui) { // подія закінчення перетягування
+                    // $("#res").text("Stop!!!");
+                    $("#res").html(ui.offset.top + " " + ui.offset.left); // координати зупинки
+                    if (ui.offset.top > 200 && ui.offset.left > 300) {
+                        $("#res").html("Error");
+                      
+                    }
+                    g();
+                }
+            });
+        }
+
+        function g() {
+            $("#extra").draggable("disable"); //"disable"
+            setTimeout(function () {
+                $("#extra").draggable("enable"); //"enable"
+            }, 5000)
+        }
+    </script>
+</body>
+
+</html>

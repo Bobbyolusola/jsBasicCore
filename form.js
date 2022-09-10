@@ -1,4 +1,4 @@
-
+//
 //
 // let f1 = document.forms["f1"]; //best one to use
 // //let f1 = document.forms.f1;
@@ -9,7 +9,7 @@
 // // console.log(f1.tt.value);
 // // console.log(f1.tp.value);
 // // console.log(f1.tc.value);
-
+//
 // f1.tb.onclick = function () {
 //     let name = f1.user.value;
 //     let checkbox = f1.tc.checked;
@@ -30,7 +30,7 @@
 //     // f1.tc.checked = 'false';
 //     // f1.tp.value = "";
 //
-//     //f1.reset();// another way to clear after sending to backend
+//     f1.reset();// another way to clear after sending to backend
 //
 //     //f1.user.placeholder = "success";
 //
@@ -62,33 +62,35 @@
 
 //FORM 3.
 
-let f3 = document.forms['f3'];
-//console.log(f3.children)// to get access to the label html
-f3.ch.addEventListener('click', function () {
-    if(this.checked){
-        document.querySelector('.form-box').style.display = 'none';
-        f3.children[0].innerHTML = 'Show';
-    }
-    else {
-        document.querySelector('.form-box').style.display = 'block';
-        f3.children[0].innerHTML = 'Hide';
-    }
-})
+// let f3 = document.forms['f3'];
+// //console.log(f3.children)// to get access to the label html
+// f3.ch.addEventListener('click', function () {
+//     if(this.checked){
+//         document.querySelector('.form-box').style.display = 'none';
+//         f3.children[0].innerHTML = 'Show';
+//     }
+//     else {
+//         document.querySelector('.form-box').style.display = 'block';
+//         f3.children[0].innerHTML = 'Hide';
+//     }
+// })
 
 
-//FORM 4.
+// //FORM 4.
 
-let f4 = document.forms['f4'];
-//console.log(f4.colors.options[1].text) // to access the options
-
-f4.colors.onchange = function () { // select tags works with onchange
-    for (let i = 0; i < f4.colors.options.length; i++) {
-        if (f4.colors.options[i].selected){
-            document.body.style.background = this.value;
-        }
-    }
-}
-
+// let f4 = document.forms['f4'];
+// //console.log(f4.colors.options[1].text) // to access the options
+//
+// f4.colors.onchange = function () { // select tags works with onchange
+//     for (let i = 0; i < f4.colors.options.length; i++) {
+//         if (f4.colors.options[i].selected){
+//             document.body.style.background = this.value;
+//         }
+//     }
+// }
+//
+// //FORM 5
+//
 let f5 = document.forms['f5'];
 f5.change.oninput = function () {
     document.getElementById('result').innerHTML = this.value
