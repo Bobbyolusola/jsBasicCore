@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Task 2</title>
+	<style>
+		ul li {
+			background: grey;
+			height: 30px;
+			width: 130px;
+			margin: 5px;
+			font-size: 25px;
+			text-align: center;
+			list-style-type: none;
+		}
+	</style>
+	<script src="jquery-3.4.1.min.js"></script>
+	<script src="jquery.easing.1.4.1.min.js"></script>
+	<script>
+		$(function () {
+			let col1, col2, col3;
+			$("li").each(function (index, element) { // застосовуємо на кожний елемент li
+				$(element).mouseover(function () { // при наведені на елемент
+					col1 = Math.round(Math.random() *
+					255); // рандомно вибираються кольори від 0 до 255
+					col2 = Math.round(Math.random() * 255);
+					col3 = Math.round(Math.random() * 255);
+					$("ul li").eq(index).animate({
+						'padding-left': '130px'
+					}, 400); // анімується додавання внут.відступів для елемента за 4мс
+					$("body").css('background', 'rgb(' + col1 + ',' + col2 + ',' + col3 +
+					')'); // і фон боді рендомно змінюється
+				});
+				$(element).mouseout(function () {
+					$("ul li").eq(index).animate({
+						'padding-left': '0px'
+					}, 400); // при заборі мишки з елемента падінг забирається
+				});
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<ul>
+		<li>item</li>
+		<li>item</li>
+		<li>item</li>
+		<li>item</li>
+		<li>item</li>
+		<li>item</li>
+		<li>item</li>
+		<li>item</li>
+		<li>item</li>
+		<li>item</li>
+		<li>item</li>
+		<li>item</li>
+		<li>item</li>
+		<li>item</li>
+		<li>item</li>
+		<li>item</li>
+	</ul>
+</body>
+
+</html>

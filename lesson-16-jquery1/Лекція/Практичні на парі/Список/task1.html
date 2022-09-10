@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Task 1</title>
+	<style>
+		li {
+			background: grey;
+			height: 55px;
+			width: 130px;
+			margin: 10px;
+			font-size: 40px;
+			text-align: center;
+			list-style-type: none;
+		}
+	</style>
+	<script src="jquery-3.4.1.min.js"></script>
+	<script src="jquery.easing.1.4.1.min.js"></script>
+	<script>
+		$(function () {
+			let type;
+			$("li").each(function (index, element) {
+				$(element).mouseover(function () {
+					type = $(this).text();
+					$("li").css("list-style-type", type);
+					$("p").eq(index).html(type);
+				});
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<ul>
+		<li>disc</li>
+		<li>circle</li>
+		<li>square</li>
+	</ul>
+	<p></p>
+	<p></p>
+	<p></p>
+</body>
+
+</html>

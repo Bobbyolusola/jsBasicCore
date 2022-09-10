@@ -1,0 +1,21 @@
+div {
+    width: 20vw;
+    height: 20vw;
+    opacity: 1;
+    background: #333;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation-name: move;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes move {
+    50%{
+        width: 40vw;
+        height: 40vw;
+        opacity: 0.5;
+    }
+}

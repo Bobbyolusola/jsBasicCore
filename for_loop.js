@@ -7,29 +7,29 @@
     console.log('banana');
 }*/
 
-/*for(let i=0; i>-3; i--){
-    document.write(`<h1>Loop ${i}</h1>`);
-}*/
+// /*for(let i=0; i>-3; i--){
+//     document.write(`<h1>Loop ${i}</h1>`);
+// }*/
+//
+// for( let j=1; j<=11; j++){
+//     document.write(`<h1>Loop ${j}</h1>`);
+// }
+//
+//  for(let count=200; count>0; count = count/2 - 20){
+//     document.write(`<h1>Loop ${count}</h1>`);
+// }
 
-/*for( let j=1; j<=11; j++){
-    document.write(`<h1>Loop ${j}</h1>`);
-}*/
-
-/*for(let count=200; count>0; count = count/2 - 20){
-    document.write(`<h1>Loop ${count}</h1>`);
-}*/
-
-/*let answer = +prompt('write loop count');
-for( let i=1; i <= answer; i++){
-    document.write(`<h1>Loop number ${i}</h1>`);
-}*/
-
-/*(let start = +prompt('Write loop start');
-let end = +prompt('write loop end');
-
-for( let i = start; i <= end; i++){
-    document.write(`<h1>Loop number ${i}</h1>`);
-}*/
+// let answer = +prompt('write loop count');
+// for( let i=1; i <= answer; i++){
+   // document.write(`<h1>Loop number ${i}</h1>`);
+// }
+//
+// let start = +prompt('Write loop start');
+// let end = +prompt('write loop end');
+//
+// for( let i = start; i <= end; i++){
+//     document.write(`<h1>Loop number ${i}</h1>`);
+// }
 
 /*for( let i = 1; i <= 10; i++){
     document.write(`<h1>Outer Loop i = ${i}</h1>`);
@@ -62,19 +62,20 @@ document.write(res);*/
 //ASSIGNMENT
 //1. Create a program that calculates the factorial of a natural number n that the user enters from the keyboard.
 
-// let num = +prompt("Enter a number");
-// let res = 1;
-//
-// for(let i = 1; i <= num; i++){
-//     res = res * i;
-// }
-// document.write(res);
+/*let num = +prompt("Enter a number");
+let res = 1;
+
+for(let i = 1; i <= num; i++){
+    res = res * i;
+}
+document.write(res);
+*/
 
 
-
+/*
 // 2. Create a program that displays all four-digit sequence numbers 1000 1003 1006 1009 1012 1015… 9999
 // -------------------------------------
-/*
+
 for(let i=1000; i <=10000; i=i+3){
     console.log(i);
 }*/
@@ -105,10 +106,8 @@ for(let i = 1; i <= 55; i=i+2){
 
 
 //6. Display all numbers in the sequence (counter change step) 2a-1, where the initial value is a = 2 and which is less than 10000.
-// let res = 1;
-// for(){
-//
-// }
+
+
 
 
 //7. Display all two-digit members of the sequence (counter change step) 2a + 200, where the initial value of the variable a = -166.

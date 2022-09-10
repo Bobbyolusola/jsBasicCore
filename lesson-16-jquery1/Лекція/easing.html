@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Each</title>
+    <style>
+        input[type=text] {
+            margin-bottom: 3px;
+        }
+
+        p {
+            height: 30px;
+            width: 0px;
+            display: inline-block;
+            margin: 0 5px 3px 0;
+        }
+
+        p:nth-of-type(1) {
+            background: green;
+        }
+
+        p:nth-of-type(2) {
+            background: red;
+        }
+
+        p:nth-of-type(3) {
+            background: yellow;
+
+        }
+
+        span {
+            vertical-align: 12px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <input type="text"><br>
+    <input type="text"><br>
+    <input type="text"><br>
+    <p></p><span>0</span><span>%</span><br>
+    <p></p><span>0</span><span>%</span><br>
+    <p></p><span>0</span><span>%</span><br>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="jquery.easing.1.4.1.min.js"></script>
+
+    <script>
+        /* 
+            Заняття можна почати з простих практичних BoxRubber i FleBox щоб перевірити як вони зрозуміли анімацію
+        */
+        /* 
+            Метод each () - це вбудований метод jQuery, який dиконує задану функцію для кожного з обраних елементів окремо. 
+            Це дає можливість обробляти вибрані елементи окремо один від одного. Метод має один варіант використання:
+            Syntax: $(selector).each(callback(index, domElement))
+            Виконує функцію callback для кожного з обраних елементів. 
+            У callback передаються 2 параметри: 
+                - номер елемента в наборі (нумерація починається з нуля)
+                - сам елемент у вигляді об'єкта DOM.
+
+            jQuery Easing
+            Функція плавності (easing) визначає швидкість течії анімації, роблячи її більш реалістичною.
+            Передається в метод animate як другий параметр в лапках, наприклад:
+             $(selector).animate({
+                ...
+            }, 8000, 'easeOutBounce');
+            Список всіх ф-й можна знайти тут:
+            https://easings.net/ru
+
+        */
+        $(function () {
+            let first;
+            console.log($("input"));
+            $("input").each(function (index, element) { // index - індекс кожного елемента, element - доступ до кожного елементп 
+                console.log(index, element);
+                $(element).change(function () {
+                    first = $(this).val();
+                    $("p").eq(index).animate({
+                        'width': first * 5
+                    }, 8000, 'easeOutBounce');
+                    $("p+span").eq(index).html(first);
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

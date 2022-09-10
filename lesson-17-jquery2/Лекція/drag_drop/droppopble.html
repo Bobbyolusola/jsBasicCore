@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <style>
+        .extra {
+            height: 150px;
+            width: 150px;
+            background: red;
+            border-radius: 100%;
+            border: 2px solid black;
+            position: absolute;
+            top: 250px;
+            left: 650px;
+        }
+
+        .drop {
+            height: 500px;
+            width: 500px;
+            background: cyan;
+            border-radius: 20px;
+            border: 2px solid green;
+        }
+
+        .active {
+            background: yellow;
+        }
+
+        .hover {
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="extra"></div>
+    <div class="drop"></div>
+    <p class="txt"></p>
+    <script>
+        $('.extra').draggable();
+        $('.drop').droppable({
+            accept: '.extra', // буде приймати тільки елементи з переданим селектором.
+            activeClass: 'active', // при переміщенні елементу присвоюється вибраний клас
+            hoverClass: 'hover', // клас який застосується на елементі при тому коли перетягування буде над ним.
+            //greedy:true,// використовується коли елемент є дочірнім іншого, true прийме скинутий елемент в дочірній. По замовчуванню false.
+            tolerance: 'touch',
+            //'fit', //повністю зайшов
+            //'intersect',// 50%
+            //  'pointer' курсор ввійшов в елемент
+            //'touch', //пересіканя границі
+
+            activate: function () {
+                $('.txt').text('START!!!');
+            },
+            // deactivate: function () {
+            //     $('.txt').text('STOP!!!');
+            // },
+            over: function () {
+                $('.txt').text('You enter in drop!');
+            },
+            out: function () {
+                $('.txt').text('Where you going?');
+            },
+            drop: function () {
+                $('.txt').text('Hello extra!!!');
+                // location.reload();
+            }
+        });
+        //disable, enable // вкл або викл
+    </script>
+</body>
+
+</html>

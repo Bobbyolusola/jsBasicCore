@@ -7,16 +7,33 @@
 	<title>Task1</title>
 </head>
 <body>
-	<form name="f1">
-		<h1 id="hh1">Some text</h1>
-		<label><input type="checkbox" name="cbbtn" checked>bold text</label>
-	</form>
+<!--	<form name="f1">-->
+<!--		<h1 id="hh1">Some text</h1>-->
+<!--		<label><input type="checkbox" name="cbbtn" checked>bold text</label>-->
+<!--	</form>-->
+
+<form name="check">
+	<h1 id="smText">Some text</h1>
+	<label><input type="checkbox" name="cbbtn" checked>click here</label>
+
+</form>
+
 	<script>
-		let getE = a => document.getElementById(a);
-		let df = document.forms.f1;
+		// let getE = a => document.getElementById(a);
+		// let df = document.forms.f1;
+		// df.cbbtn.onclick = function () {
+		// 	if (this.checked) getE("hh1").style.fontWeight = "bold"; // жирний текст
+		// 	else getE("hh1").style.fontWeight = "normal"; // нежирний текст
+		// }
+
+		let GEB = a => document.getElementById(a);
+		let df = document.forms.check;
 		df.cbbtn.onclick = function () {
-			if (this.checked) getE("hh1").style.fontWeight = "bold"; // жирний текст
-			else getE("hh1").style.fontWeight = "normal"; // нежирний текст
+			if(this.checked){
+				GEB("smText").style.fontWeight = "bold";
+			}else{
+				GEB("smText").style.fontWeight = "normal";
+			}
 		}
 
 	</script>
